@@ -56,3 +56,10 @@ CMD npm run start`
 `"build": "webpack --config webpack.config.js"` - config packege.json
 
 `Если вас беспокоит размер вашего node_modules каталога, возможно, вы сможете определить, какие пакеты используются только во время разработки (например, инструменты тестирования, такие как Jest и Mocha, транспайлеры, такие как Babel, Typescript и т.д.). Поместите их внутри "devDependency" ключа в вашем package.json файле. Затем в рабочей среде запустите npm install --production, и он не установит то, что вы указали как devDependency. Это должно привести к созданию меньшего размера node_modules.`
+
+### git
+`git init
+git add .
+git commit -m "my commit"
+git remote set-url origin git@github.com:username/repo.git
+git push origin master`
