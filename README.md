@@ -12,23 +12,29 @@
 
 ### Запуск контейнера под Node приложение
 
-* Dockerfile * 
-`FROM alpine
+** Dockerfile ** 
+```
+FROM alpine
 EXPOSE 3000
 WORKDIR /app
 RUN apk add --update npm
 COPY . .
 RUN npm ci 
-CMD npm run start`
+CMD npm run start
+```
 
 `docker build -t test -f .\Dockerfile .`
 
 
 ### Команды 
 `docker ps` - просмотр контейнеров;
+
 `docker image ls` - просмотр образов
+
 `docker run --name testalpine -d -p 81:3000 test` - запуск контейнера; 
+
 `docker exec -it <id> <bash, sh>`
+
 
 #### удаление контейнера
 `docker stop <id/name>`
@@ -55,11 +61,11 @@ CMD npm run start`
 
 `"build": "webpack --config webpack.config.js"` - config packege.json
 
-`Если вас беспокоит размер вашего node_modules каталога, возможно, вы сможете определить, какие пакеты используются только во время разработки (например, инструменты тестирования, такие как Jest и Mocha, транспайлеры, такие как Babel, Typescript и т.д.). Поместите их внутри "devDependency" ключа в вашем package.json файле. Затем в рабочей среде запустите npm install --production, и он не установит то, что вы указали как devDependency. Это должно привести к созданию меньшего размера node_modules.`
+```Если вас беспокоит размер вашего node_modules каталога, возможно, вы сможете определить, какие пакеты используются только во время разработки (например, инструменты тестирования, такие как Jest и Mocha, транспайлеры, такие как Babel, Typescript и т.д.). Поместите их внутри "devDependency" ключа в вашем package.json файле. Затем в рабочей среде запустите npm install --production, и он не установит то, что вы указали как devDependency. Это должно привести к созданию меньшего размера node_modules.```
 
 ### git
-`git init
+```git init
 git add .
 git commit -m "my commit"
 git remote set-url origin git@github.com:username/repo.git
-git push origin master`
+git push origin master```
